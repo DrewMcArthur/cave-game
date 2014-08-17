@@ -1,5 +1,12 @@
 <html>
 	<head>
+		<?php 
+			if (htmlspecialchars($_GET["main"])) {
+				$main = htmlspecialchars($_GET["main"]);
+			} else {
+				$main = "home";
+			}
+		?>
 		<title>cave-game</title>
 		<link rel="stylesheet" type="text/css" href="/style/styles.css">
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
@@ -7,14 +14,17 @@
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 		<script>
 			$(function(){
-				$("#page").load("page/page.html");
-				console.log("after page before header footer");
+				$("#main").load("page/<?php echo $main;?>.html");
 				$("#header").load("page/header.html");
 				$("#footer").load("page/footer.html");
 			});
 		</script>
 	</head>
 	<body>
-		<div id="page"></div>
+		<div id="page">
+			<div id="header"></div>
+			<div id="main"></div>
+			<div id="footer"></div>
+		</div>
 	</body>
 </html>

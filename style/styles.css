@@ -1,3 +1,17 @@
 * {
 	font-family:'Ubuntu','Open Sans', sans-serif;
 }
+div#page {
+	width:800px;
+	margin:auto;
+}
+/*
+ * header
+ */
+div#header h1,
+div#header ul {
+	float:left;
+}
+div#header {
+	height:100px;
+}
